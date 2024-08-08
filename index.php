@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
 
-if ($username === 'admin') {
+if ($user_id === '1') {
     $sql = "SELECT * FROM users";
 } else {
     $sql = "SELECT * FROM users WHERE user_id = ?";
@@ -19,7 +19,7 @@ if ($username === 'admin') {
 
 $stmt = $conn->prepare($sql);
 
-if ($username !== 'admin') {
+if ($user_id !== '1') {
     $stmt->bind_param("i", $user_id);
 }
 
