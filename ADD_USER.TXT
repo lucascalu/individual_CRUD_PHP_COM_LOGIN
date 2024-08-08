@@ -4,7 +4,7 @@ include 'db.php';
 $username = 'admin';
 $password = password_hash('password123', PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+$sql = "INSERT INTO login_users (username, password) VALUES ('$username', '$password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "User created successfully";
